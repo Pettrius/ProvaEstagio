@@ -99,8 +99,32 @@ http://localhost:5000
 
 ### 🌐 3. Rodar o Frontend
 
-Navegue até a pasta frontend/
-Abra o arquivo index.html diretamente no navegador
+## Pré-requisitos
+
+✅ Backend da API deve estar rodando em http://localhost:5000
+✅ Navegador web moderno (Chrome, Firefox, Edge, etc.)
+
+# Opção 1: Abrir Diretamente (Mais Simples)
+
+Navegue até a pasta do frontend:
+
+```
+cd C:\Users\pettr\Desktop\ProvaEstagio\biblioteca-mvp\frontend
+```
+
+Clique duas vezes no arquivo index.html
+
+Pronto! O sistema abrirá no seu navegador padrão.
+
+# Opção 2: Usar Servidor Local (Recomendado)
+Para evitar problemas de CORS, é melhor usar um servidor local:
+Com Python (Se você já tem Python instalado):
+```
+cd C:\Users\pettr\Desktop\ProvaEstagio\biblioteca-mvp\frontend
+python -m http.server 8000
+```
+Depois acesse: http://localhost:8000
+```
 
 ---
 
