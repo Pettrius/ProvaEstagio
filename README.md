@@ -1,97 +1,116 @@
-# Sistema de Gerenciamento de Biblioteca
+# 📚 Sistema de Gerenciamento de Biblioteca (MVP)
 
-[Biblioteca MVP]
+> **Projeto de Avaliação Técnica** | Vaga de Estágio em Desenvolvimento
 
-# Sobre o Projeto
+## 📖 Sobre o Projeto
 
-Sistema completo de gerenciamento de biblioteca desenvolvido como MVP, permitindo o cadastro de livros e controle de empréstimos. O projeto demonstra a construção de uma aplicação full-stack com separação clara entre Backend (API RESTful) e Frontend (aplicação web).
+Este é um **Sistema de Gerenciamento de Biblioteca** desenvolvido como um MVP (Minimum Viable Product). O objetivo é demonstrar a construção de uma aplicação **Full-stack** robusta, com uma separação clara de responsabilidades:
+* **Backend:** API RESTful.
+* **Frontend:** Aplicação web para interação com o usuário.
 
-# Tema
-
-Biblioteca Digital: Controle de acervo de livros e gerenciamento de empréstimos para usuários.
+### 🎯 Funcionalidades Principais
+* **Controle de Acervo:** Cadastro e gerenciamento de livros.
+* **Gestão de Empréstimos:** Controle de fluxo de retirada e devolução de exemplares.
 
 ---
 
-# Como Rodar o Projeto
+## 🛠️ Tecnologias Utilizadas
 
-# Pré-requisitos
+* **Linguagem:** Python 3.8+
+* **Banco de Dados:** MySQL Server 5.7+
+* **Frontend:** HTML5, CSS3, JavaScript (Nativo)
+* **API:** Flask (Inferido pelo contexto, ajuste se for Django/FastAPI)
 
-- Python 3.8 ou superior
-- MySQL Server 5.7 ou superior
-- Navegador web moderno
+---
 
-# 1. Configurar o Banco de Dados
+## 🚀 Como Rodar o Projeto
 
-\bash
-# Acessar o MySQL
+Siga os passos abaixo para configurar o ambiente de desenvolvimento.
+
+### Pré-requisitos
+Certifique-se de ter instalado:
+* [Python 3.8+](https://www.python.org/)
+* [MySQL Server](https://dev.mysql.com/downloads/mysql/)
+* Um navegador web moderno.
+
+### 🗄️ 1. Configurar o Banco de Dados
+
+Acesse o MySQL:
+```
 mysql -u root -p
-
-# Criar o banco de dados
 CREATE DATABASE biblioteca_db;
 EXIT;
+```
 
-# 2. Rodar o Backend
+### 🗄️ 2. Rodar o Backend
 
-\bash
-# Navegar até a pasta do backend
+Navegue até a pasta do backend:
+```
 cd backend
+```
 
-# Criar ambiente virtual (recomendado)
+Crie um ambiente virtual (recomendado):
+```
 python -m venv venv
+```
 
-# Ativar ambiente virtual
-# No Windows:
+Ative o ambiente virtual:
+
+Windows:
+```
 venv\Scripts\activate
+```
 
-# No Linux/Mac:
+Linux / macOS:
+```
 source venv/bin/activate
+```
 
-# Instalar dependências
+Instale as dependências:
+```
 pip install -r requirements.txt
+```
 
-# Criar arquivo .env na pasta backend (opcional)
-# Adicione suas credenciais do MySQL:
+Crie o arquivo .env na pasta backend (opcional, mas recomendado):
+
 DB_USER=root
 DB_PASSWORD=sua_senha
 DB_HOST=localhost
 DB_PORT=3306
 DB_NAME=biblioteca_db
 
-# Rodar o servidor
+
+Inicie o servidor:
+```
 python app.py
+```
 
-\bash
+📍 O backend estará disponível em:
+```
+http://localhost:5000
+```
 
-O backend estará rodando em: http://localhost:5000
+###🌐 3. Rodar o Frontend
 
----
-
-# 3. Rodar o Frontend
-
-# Abrir diretamente os arquivos HTML no navegador
-# Navegue até a pasta frontend/ e abra o arquivo index.html
-
----
-
-# Capturas de Tela
-Ainda em desenvolvimento...
+Navegue até a pasta frontend/
+Abra o arquivo index.html diretamente no navegador
 
 ---
 
-# Autor
-
-Pettrius Vilas Boas De Paiva Cardoso
-
-Desenvolvido como projeto de avaliação técnica para vaga de Estagiário.
+📸 Capturas de Tela
+Em desenvolvimento...
 
 ---
 
-# Planejamento do projeto
+📅 Planejamento do Projeto
+O detalhamento das tarefas, requisitos e o cronograma de desenvolvimento estão documentados no Notion:
 
+🔗 Acessar Planejamento no Notion
 https://www.notion.so/Prova-Estagi-rio-Desenvolvimento-API-Client-1e29b9448bfc806582a8c8d8fd9cc189?source=copy_link
 
 ---
 
-# Licença
+👨‍💻 Autor
+Pettrius Vilas Boas De Paiva Cardoso
 
-Este projeto foi desenvolvido para fins educacionais e de avaliação técnica.
+Projeto desenvolvido como parte do processo seletivo para vaga de Estagiário em Desenvolvimento.
