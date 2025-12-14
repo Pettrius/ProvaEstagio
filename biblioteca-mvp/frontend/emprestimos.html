@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Empréstimos - Biblioteca</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="container">
+            <h1 class="logo">📚 Biblioteca MVP</h1>
+            <nav class="navegacao">
+                <a href="index.html">Início</a>
+                <a href="livros.html">Livros</a>
+                <a href="emprestimos.html" class="ativo">Empréstimos</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="conteudo-principal">
+        <div class="container">
+            <div class="cabecalho-pagina">
+                <h2>Gerenciar Empréstimos</h2>
+                <button class="botao primario" onclick="abrirModal()">
+                    ➕ Novo Empréstimo
+                </button>
+            </div>
+
+            <!-- Mensagens de Feedback -->
+            <div id="mensagemFeedback" class="mensagem escondido"></div>
+
+            <!-- Filtros -->
+            <div class="filtros">
+                <button class="botao-filtro ativo" onclick="filtrarPorStatus('todos')">
+                    Todos
+                </button>
+                <button class="botao-filtro" onclick="filtrarPorStatus('ativo')">
+                    Ativos
+                </button>
+                <button class="botao-filtro" onclick="filtrarPorStatus('devolvido')">
+                    Devolvidos
+                </button>
+            </div>
+
+            <!-- Tabela de Empréstimos -->
+            <div class="tabela-container">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Usuário</th>
+                            <th>Livro</th>
+                            <th>Data Empréstimo</th>
+                            <th>Data Devolução</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelaEmprestimos">
+                        <tr>
+                            <td colspan="7" class="carregando">Carregando empréstimos...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal para Novo Empréstimo -->
+    <div id="modalEmprestimo" class="modal">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h3>Novo Empréstimo</h3>
+                <button class="botao-fechar" onclick="fecharModal()">&times;</button>
+            </div>
+            <form id="formEmprestimo" onsubmit="salvarEmprestimo(event)">
+                <div class="campo-formulario">
+                    <label for="nomeUsuario">Nome do Usuário *</label>
+                    <input type="text" id="nomeUsuario" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="livroId">Selecione o Livro *</label>
+                    <select id="livroId" required>
+                        <option value="">Carregando livros...</option>
+                    </select>
+                </div>
+
+                <div class="modal-acoes">
+                    <button type="button" class="botao secundario" onclick="fecharModal()">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="botao primario">
+                        Realizar Empréstimo
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div id="modalConfirmacao" class="modal">
+        <div class="modal-conteudo modal-pequeno">
+            <div class="modal-cabecalho">
+                <h3>Confirmar Exclusão</h3>
+                <button class="botao-fechar" onclick="fecharModalConfirmacao()">&times;</button>
+            </div>
+            <div class="modal-corpo">
+                <p>Tem certeza que deseja excluir este empréstimo?</p>
+                <p class="texto-aviso">Esta ação não pode ser desfeita.</p>
+            </div>
+            <div class="modal-acoes">
+                <button class="botao secundario" onclick="fecharModalConfirmacao()">
+                    Cancelar
+                </button>
+                <button class="botao perigo" onclick="confirmarExclusao()">
+                    Excluir
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="container">
+            <p>&copy; 2025 Sistema de Biblioteca MVP - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/emprestimos.js"></script>
+</body>
+</html>
