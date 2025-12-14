@@ -1,293 +1,125 @@
-# Sistema de Gerenciamento de Biblioteca
+# 📚 Sistema de Gerenciamento de Biblioteca (MVP)
 
-[Biblioteca MVP]
-
-## Sobre o Projeto
-
-Sistema completo de gerenciamento de biblioteca desenvolvido como MVP, permitindo o cadastro de livros e controle de empréstimos. O projeto demonstra a construção de uma aplicação full-stack com separação clara entre Backend (API RESTful) e Frontend (aplicação web).
-
-### Tema
-
-**Biblioteca Digital**: Controle de acervo de livros e gerenciamento de empréstimos para usuários.
+> **Projeto de Avaliação Técnica** | Vaga de Estágio em Desenvolvimento
 
 ---
 
-## Tecnologias Utilizadas
+## 📖 Sobre o Projeto
 
-### Backend
-- **Python 3.14
-- **Flask**
-- **Flask-SQLAlchemy** 
-- **Flask-CORS** 
-- **MySQL** 
-- **PyMySQL** 
-
-### Frontend
-- **HTML5** - Estrutura
-- **CSS3** - Estilização
-- **JavaScript (Vanilla)** - Lógica e consumo da API
+Este é um **Sistema de Gerenciamento de Biblioteca** desenvolvido como um MVP (Minimum Viable Product). O objetivo é demonstrar a construção de uma aplicação **Full-stack** robusta, com uma separação clara de responsabilidades:
+* **Backend:** API RESTful.
+* **Frontend:** Aplicação web para interação com o usuário.
 
 ---
 
-## Estrutura do Projeto
-
-\`\`\`
-bibliotecamvp/
-│
-├── backend/                    # API RESTful em Python/Flask
-│   ├── app.py                 # Arquivo principal da aplicação
-│   ├── config.py              # Configurações do banco de dados
-│   ├── models.py              # Modelos de dados (Livro e Emprestimo)
-│   ├── requirements.txt       # Dependências Python
-│   └── routes/                # Rotas da API
-│       ├── __init__.py
-│       ├── livros.py          # Endpoints de livros
-│       └── emprestimos.py     # Endpoints de empréstimos
-│
-└── frontend/                   # Cliente web
-    ├── index.html             # Página inicial (dashboard)
-    ├── livros.html            # Gerenciamento de livros
-    ├── emprestimos.html       # Gerenciamento de empréstimos
-    ├── css/
-    │   └── estilos.css        # Estilos da aplicação
-    └── js/
-        ├── api.js             # Camada de comunicação com API
-        ├── inicio.js          # Lógica da página inicial
-        ├── livros.js          # Lógica de gerenciamento de livros
-        └── emprestimos.js     # Lógica de gerenciamento de empréstimos
-\`\`\`
+### 🎯 Funcionalidades Principais
+* **Controle de Acervo:** Cadastro e gerenciamento de livros.
+* **Gestão de Empréstimos:** Controle de fluxo de retirada e devolução de exemplares.
 
 ---
 
-## Banco de Dados
+## 🛠️ Tecnologias Utilizadas
 
-### Modelagem
-
-O sistema possui duas tabelas principais com relacionamento **1:N** (um para muitos):
-
-#### Tabela: `livros`
-\`\`\`sql
-- id (PK, INT, AUTO_INCREMENT)
-- titulo (VARCHAR 200, NOT NULL)
-- autor (VARCHAR 200, NOT NULL)
-- ano_publicacao (INT, NOT NULL)
-- quantidade_total (INT, NOT NULL)
-- quantidade_disponivel (INT, NOT NULL)
-\`\`\`
-
-#### Tabela: `emprestimos`
-\`\`\`sql
-- id (PK, INT, AUTO_INCREMENT)
-- nome_usuario (VARCHAR 200, NOT NULL)
-- livro_id (FK, INT, NOT NULL) -> livros.id
-- status (VARCHAR 50, NOT NULL) ['ativo', 'devolvido']
-- data_emprestimo (DATE, NOT NULL)
-- data_devolucao (DATE, NULLABLE)
-\`\`\`
-
-**Relacionamento**: Um livro pode ter vários empréstimos (1:N)
+* **Linguagem:** Python 3.8+
+* **Banco de Dados:** MySQL Server 5.7+
+* **Frontend:** HTML5, CSS3, JavaScript (Nativo)
+* **API:** Flask (Inferido pelo contexto, ajuste se for Django/FastAPI)
 
 ---
 
-## Como Rodar o Projeto
+## 🚀 Como Rodar o Projeto
+
+Siga os passos abaixo para configurar o ambiente de desenvolvimento.
 
 ### Pré-requisitos
+Certifique-se de ter instalado:
 
-- Python 3.8 ou superior
-- MySQL Server 5.7 ou superior
-- Navegador web moderno
+* [Python 3.8+](https://www.python.org/)
+* [MySQL Server](https://dev.mysql.com/downloads/mysql/)
+* Um navegador web moderno.
 
-### 1. Configurar o Banco de Dados
+### 🗄️ 1. Configurar o Banco de Dados
 
-\`\`\`bash
-# Acessar o MySQL
+Acesse o MySQL:
+```
 mysql -u root -p
-
-# Criar o banco de dados
 CREATE DATABASE biblioteca_db;
 EXIT;
-\`\`\`
+```
 
-### 2. Rodar o Backend
+### 🗄️ 2. Rodar o Backend
 
-\`\`\`bash
-# Navegar até a pasta do backend
+Navegue até a pasta do backend:
+```
 cd backend
+```
 
-# Criar ambiente virtual (recomendado)
+Crie um ambiente virtual (recomendado):
+```
 python -m venv venv
+```
 
-# Ativar ambiente virtual
-# No Windows:
+Ative o ambiente virtual:
+
+Windows:
+```
 venv\Scripts\activate
-# No Linux/Mac:
+```
+
+Linux / macOS:
+```
 source venv/bin/activate
+```
 
-# Instalar dependências
+Instale as dependências:
+```
 pip install -r requirements.txt
+```
 
-# Criar arquivo .env na pasta backend (opcional)
-# Adicione suas credenciais do MySQL:
+Crie o arquivo .env na pasta backend (opcional, mas recomendado):
+```
 DB_USER=root
 DB_PASSWORD=sua_senha
 DB_HOST=localhost
 DB_PORT=3306
 DB_NAME=biblioteca_db
+```
 
-# Rodar o servidor
+Inicie o servidor:
+```
 python app.py
-\`\`\`
+```
 
-O backend estará rodando em: **http://localhost:5000**
-
-### 3. Rodar o Frontend
-
-\`\`\`bash
-# Opção 1: Abrir diretamente os arquivos HTML no navegador
-# Navegue até a pasta frontend/ e abra o arquivo index.html
-
-# Opção 2: Usar servidor HTTP simples (recomendado)
-# No diretório raiz do projeto:
-cd frontend
-
-# Python 3:
-python -m http.server 8080
-
-# OU usar Node.js (se tiver instalado):
-npx http-server -p 8080
-\`\`\`
-
-O frontend estará rodando em: **http://localhost:8080**
+📍 O backend estará disponível em:
+```
+http://localhost:5000
+```
 
 ---
 
-## API Endpoints
+### 🌐 3. Rodar o Frontend
 
-### Livros
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| GET | `/api/livros` | Lista todos os livros |
-| GET | `/api/livros/<id>` | Busca um livro específico |
-| POST | `/api/livros` | Cria um novo livro |
-| PUT | `/api/livros/<id>` | Atualiza um livro |
-| DELETE | `/api/livros/<id>` | Deleta um livro |
-
-### Empréstimos
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| GET | `/api/emprestimos` | Lista todos os empréstimos |
-| GET | `/api/emprestimos/<id>` | Busca um empréstimo específico |
-| POST | `/api/emprestimos` | Cria um novo empréstimo |
-| PUT | `/api/emprestimos/<id>` | Atualiza um empréstimo (devolução) |
-| DELETE | `/api/emprestimos/<id>` | Deleta um empréstimo |
-
-### Status Codes Utilizados
-
-- **200** - Sucesso (GET, PUT, DELETE)
-- **201** - Criado com sucesso (POST)
-- **400** - Erro de validação ou requisição inválida
-- **404** - Recurso não encontrado
-- **500** - Erro interno do servidor
+Navegue até a pasta frontend/
+Abra o arquivo index.html diretamente no navegador
 
 ---
 
-## Funcionalidades
-
-### Gerenciamento de Livros
-- Cadastrar novos livros com título, autor, ano e quantidades
-- Listar todos os livros do acervo
-- Editar informações de livros existentes
-- Excluir livros (apenas se não houver empréstimos ativos)
-- Visualizar quantidades total e disponível
-
-### Gerenciamento de Empréstimos
-- Realizar novos empréstimos (apenas livros disponíveis)
-- Listar todos os empréstimos
-- Filtrar empréstimos por status (ativos/devolvidos/todos)
-- Registrar devolução de livros
-- Excluir registros de empréstimos
-- Controle automático de quantidade disponível
-
-### Dashboard
-- Estatísticas gerais do sistema
-- Total de livros no acervo
-- Total de empréstimos realizados
-- Empréstimos ativos
-- Navegação intuitiva
+### 📸 Capturas de Tela
+Em desenvolvimento...
 
 ---
 
-## Capturas de Tela
+### 📅 Planejamento do Projeto
+O detalhamento das tarefas, requisitos e o cronograma de desenvolvimento estão documentados no Notion:
 
-### Página Inicial (Dashboard)
-![Dashboard](https://via.placeholder.com/800x500/2563eb/ffffff?text=Dashboard+com+Estatisticas)
+### 🔗 Acessar Planejamento no Notion
 
-*Dashboard mostrando estatísticas gerais do sistema: total de livros, empréstimos realizados e empréstimos ativos.*
-
+* [NOTION](https://www.notion.so/Prova-Estagi-rio-Desenvolvimento-API-Client-1e29b9448bfc806582a8c8d8fd9cc189?source=copy_link)
+  
 ---
 
-### Gerenciamento de Livros
-![Livros](https://via.placeholder.com/800x500/2563eb/ffffff?text=Gerenciamento+de+Livros)
+### 👨‍💻 Autor
 
-*Tela de gerenciamento completo de livros com tabela listando todos os livros cadastrados, botões de ação (editar/excluir) e modal para adicionar/editar livros.*
+## Pettrius Vilas Boas De Paiva Cardoso
 
----
-
-### Gerenciamento de Empréstimos
-![Empréstimos](https://via.placeholder.com/800x500/2563eb/ffffff?text=Gerenciamento+de+Emprestimos)
-
-*Tela de controle de empréstimos com filtros por status, opções de devolução e histórico completo de empréstimos realizados.*
-
----
-
-## Diferenciais Implementados
-
-- **Validações Completas**: Backend valida todos os dados recebidos
-- **Feedback Visual**: Interface reage a todas as ações do usuário
-- **Controle de Estoque**: Atualização automática de quantidades
-- **Status Codes Corretos**: API retorna códigos HTTP apropriados
-- **Design Responsivo**: Interface adaptável a diferentes telas
-- **Código Limpo**: Variáveis e comentários em português
-- **Mensagens de Erro**: Tratamento adequado de exceções
-- **Relacionamento Cascata**: Integridade referencial no banco
-
----
-
-## Requisitos Atendidos
-
-- ✅ Banco de dados relacional (MySQL)
-- ✅ Relacionamento 1:N entre tabelas (Livro → Empréstimos)
-- ✅ API RESTful em Python/Flask
-- ✅ CRUD completo para Livros e Empréstimos
-- ✅ Uso correto dos métodos HTTP (GET, POST, PUT, DELETE)
-- ✅ Status codes apropriados (200, 201, 400, 404, 500)
-- ✅ Respostas em formato JSON
-- ✅ Frontend consumindo API real (sem dados mockados)
-- ✅ Feedback ao usuário (mensagens de sucesso/erro)
-- ✅ Interface completa para CRUD via API
-- ✅ README completo com instruções
-- ✅ Código organizado e limpo
-
----
-
-## Autor
-
-Pettrius Vilas Boas De Paiva Cardoso
-
-Desenvolvido como projeto de avaliação técnica para vaga de Estagiário.
-
----
-
-
-## Planejamento do projeto
-
-https://www.notion.so/Prova-Estagi-rio-Desenvolvimento-API-Client-1e29b9448bfc806582a8c8d8fd9cc189?source=copy_link
-
----
-
-
-## Licença
-
-Este projeto foi desenvolvido para fins educacionais e de avaliação técnica.
+Projeto desenvolvido como parte do processo seletivo para vaga de Estagiário em Desenvolvimento.
