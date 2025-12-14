@@ -2,11 +2,15 @@
 
 > **Projeto de Avaliação Técnica** | Vaga de Estágio em Desenvolvimento
 
+---
+
 ## 📖 Sobre o Projeto
 
 Este é um **Sistema de Gerenciamento de Biblioteca** desenvolvido como um MVP (Minimum Viable Product). O objetivo é demonstrar a construção de uma aplicação **Full-stack** robusta, com uma separação clara de responsabilidades:
 * **Backend:** API RESTful.
 * **Frontend:** Aplicação web para interação com o usuário.
+
+---
 
 ### 🎯 Funcionalidades Principais
 * **Controle de Acervo:** Cadastro e gerenciamento de livros.
@@ -29,6 +33,7 @@ Siga os passos abaixo para configurar o ambiente de desenvolvimento.
 
 ### Pré-requisitos
 Certifique-se de ter instalado:
+
 * [Python 3.8+](https://www.python.org/)
 * [MySQL Server](https://dev.mysql.com/downloads/mysql/)
 * Um navegador web moderno.
@@ -72,13 +77,13 @@ pip install -r requirements.txt
 ```
 
 Crie o arquivo .env na pasta backend (opcional, mas recomendado):
-
+```
 DB_USER=root
 DB_PASSWORD=sua_senha
 DB_HOST=localhost
 DB_PORT=3306
 DB_NAME=biblioteca_db
-
+```
 
 Inicie o servidor:
 ```
@@ -90,27 +95,31 @@ python app.py
 http://localhost:5000
 ```
 
-###🌐 3. Rodar o Frontend
+---
+
+### 🌐 3. Rodar o Frontend
 
 Navegue até a pasta frontend/
 Abra o arquivo index.html diretamente no navegador
 
 ---
 
-📸 Capturas de Tela
+### 📸 Capturas de Tela
 Em desenvolvimento...
 
 ---
 
-📅 Planejamento do Projeto
+### 📅 Planejamento do Projeto
 O detalhamento das tarefas, requisitos e o cronograma de desenvolvimento estão documentados no Notion:
 
-🔗 Acessar Planejamento no Notion
-https://www.notion.so/Prova-Estagi-rio-Desenvolvimento-API-Client-1e29b9448bfc806582a8c8d8fd9cc189?source=copy_link
+### 🔗 Acessar Planejamento no Notion
 
+* [NOTION]([(https://www.notion.so/Prova-Estagi-rio-Desenvolvimento-API-Client-1e29b9448bfc806582a8c8d8fd9cc189?source=copy_link)])
+  
 ---
 
-👨‍💻 Autor
-Pettrius Vilas Boas De Paiva Cardoso
+### 👨‍💻 Autor
+
+# Pettrius Vilas Boas De Paiva Cardoso
 
 Projeto desenvolvido como parte do processo seletivo para vaga de Estagiário em Desenvolvimento.
