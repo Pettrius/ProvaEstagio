@@ -128,7 +128,9 @@ Depois acesse: http://localhost:8000
 ---
 
 ### 📸 Capturas de Tela
-Em desenvolvimento...
+
+![Tela de Livros](./assets/Livros.png)
+![Tela de Emprestimos](./assets/Emprestimos.png)
 
 ---
 
