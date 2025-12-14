@@ -124,7 +124,6 @@ cd C:\Users\pettr\Desktop\ProvaEstagio\biblioteca-mvp\frontend
 python -m http.server 8000
 ```
 Depois acesse: http://localhost:8000
-```
 
 ---
 
