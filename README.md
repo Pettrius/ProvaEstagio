@@ -114,12 +114,12 @@ O detalhamento das tarefas, requisitos e o cronograma de desenvolvimento estão 
 
 ### 🔗 Acessar Planejamento no Notion
 
-* [NOTION]([(https://www.notion.so/Prova-Estagi-rio-Desenvolvimento-API-Client-1e29b9448bfc806582a8c8d8fd9cc189?source=copy_link)])
+* [NOTION](https://www.notion.so/Prova-Estagi-rio-Desenvolvimento-API-Client-1e29b9448bfc806582a8c8d8fd9cc189?source=copy_link)
   
 ---
 
 ### 👨‍💻 Autor
 
-# Pettrius Vilas Boas De Paiva Cardoso
+## Pettrius Vilas Boas De Paiva Cardoso
 
 Projeto desenvolvido como parte do processo seletivo para vaga de Estagiário em Desenvolvimento.
